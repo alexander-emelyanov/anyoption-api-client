@@ -1,0 +1,11 @@
+{
+    "name": "alexander-emelyanov/anyoption-api-client",
+    "description": "PHP Client for anyoption platform",
+    "authors": [
+        {
+            "name": "Alexander Emelyanov",
+            "email": "alexander.emelyanov@outlook.com"
+        }
+    ],
+    "require": {}
+}
