@@ -2,3 +2,6 @@
 
 # JetBrains IDE
 .idea
+
+# Temporary test file
+/test.php

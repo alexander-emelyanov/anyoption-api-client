@@ -1,11 +1,28 @@
 {
-    "name": "alexander-emelyanov/anyoption-api-client",
-    "description": "PHP Client for AnyOption platform",
-    "authors": [
-        {
-            "name": "Alexander Emelyanov",
-            "email": "alexander.emelyanov@outlook.com"
-        }
-    ],
-    "require": {}
+  "name": "alexander-emelyanov/anyoption-api-client",
+  "description": "PHP Client for AnyOption platform",
+  "keywords": ["AnyOption", "api", "Binary Options"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Emelyanov",
+      "email": "alexander.emelyanov@outlook.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "AnyOption\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AnyOption\\Tests\\": "tests"
+    }
+  }
 }
