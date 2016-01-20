@@ -13,8 +13,21 @@ class ApiClient
      */
     protected $httpClient;
 
-    public function call($command){
+    /**
+     * @param \AnyOption\Command $command
+     * @return bool
+     */
+    public function call(Command $command){
 
+        $requestData = $command->getParameters();
+
+        $uri = $this->baseUrl . $command->getUri();
+
+        $this->httpClient->request('GET', $uri, [json_encode($requestData)]);
+
+        var_dump($requestData);
+
+        return true;
     }
 
 

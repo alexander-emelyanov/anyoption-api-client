@@ -2,13 +2,17 @@
 
 namespace AnyOption\Commands;
 
+use AnyOption\Command;
 use AnyOption\Parameter;
 
-class InsertUser
+class InsertUser extends  Command
 {
-    CONST URI = 'insertUser';
 
-    public static function parameters(){
+    public static function getUri(){
+        return 'insertUser';
+    }
+
+    public static function metadata(){
         return [
             'locale' => new Parameter('locale', [], []),
             'utcOffset' => new Parameter('utcOffset', [], []),
