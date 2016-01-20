@@ -1,6 +1,6 @@
 {
     "name": "alexander-emelyanov/anyoption-api-client",
-    "description": "PHP Client for anyoption platform",
+    "description": "PHP Client for AnyOption platform",
     "authors": [
         {
             "name": "Alexander Emelyanov",
