@@ -27,11 +27,11 @@ class ApiClient
      */
     public function call(Command $command){
 
-        $requestData = $command->getParameters();
-
         $uri = $this->baseUrl . $command->getUri();
 
-        $serverResponse = $this->httpClient->request('POST', $uri, [json_encode($requestData)]);
+        $requestData = $command->getParameters();
+
+        $serverResponse = $this->httpClient->request('POST', $uri, ['body' => json_encode($requestData)]);
 
         // Read a body contents
         $contents = $serverResponse->getBody()->getContents();
@@ -43,7 +43,7 @@ class ApiClient
         $apiResponse = new ApiResponse($payload);
 
         if (!$apiResponse->isSuccess()){
-            throw new Exception($apiResponse, $apiResponse->getApiCodeDescription());
+            throw new Exception($apiResponse, $apiResponse->getApiCode() . ": " . $apiResponse->getApiCodeDescription());
         }
 
         return $apiResponse;
