@@ -22,7 +22,7 @@ class ApiClient
 
     /**
      * @param \AnyOption\Command $command
-     * @return bool
+     * @return \AnyOption\Response
      * @throws \AnyOption\Exception
      */
     public function call(Command $command){
@@ -39,14 +39,14 @@ class ApiClient
         // Parse raw body contents into Payload object.
         $payload = Payload::fromJson($contents);
 
-        // Load data from parsed object into ApiResponse object.
-        $apiResponse = new ApiResponse($payload);
+        // Load data from parsed object into Response object.
+        $response = $command->getResponse($payload);
 
-        if (!$apiResponse->isSuccess()){
-            throw new Exception($apiResponse, $apiResponse->getApiCode() . ": " . $apiResponse->getApiCodeDescription());
+        if (!$response->isSuccess()){
+            throw new Exception($response, $response->getApiCode() . ": " . $response->getApiCodeDescription());
         }
 
-        return $apiResponse;
+        return $response;
     }
 
 

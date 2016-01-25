@@ -4,8 +4,9 @@ namespace AnyOption\Commands;
 
 use AnyOption\Command;
 use AnyOption\Parameter;
+use AnyOption\Payload;
 
-class InsertUser extends  Command
+class InsertUser extends Command
 {
 
     public static function getUri(){
@@ -33,5 +34,13 @@ class InsertUser extends  Command
                 new Parameter('dynamicParam', [], []),
             ],
         ];
+    }
+
+    /**
+     * @param Payload $payload
+     * @return \AnyOption\Responses\InsertUser
+     */
+    public static function getResponse(Payload $payload){
+        return new \AnyOption\Responses\InsertUser($payload);
     }
 }

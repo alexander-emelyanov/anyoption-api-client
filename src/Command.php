@@ -24,4 +24,10 @@ abstract class Command
      * @return array
      */
     abstract public static function metadata();
+
+    /**
+     * @param \AnyOption\Payload $payload
+     * @return \AnyOption\Response
+     */
+    abstract public static function getResponse(Payload $payload);
 }
