@@ -24,7 +24,6 @@ class InsertUser extends Response
      */
     public function __construct(Payload $payload){
         parent::__construct($payload);
-        var_dump($payload);
         $this->userMessages = isset($payload[static::FIELD_USER_MESSAGES]) ? $payload[static::FIELD_USER_MESSAGES] : [];
         $this->user = isset($payload[static::FIELD_USER]) ? $payload[static::FIELD_USER] : [];
     }
