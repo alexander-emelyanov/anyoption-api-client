@@ -14,8 +14,16 @@ class ApiClient
     protected $httpClient;
 
     /**
+     * @param GuzzleHttp\ClientInterface|null $httpClient
+     */
+    public function __construct(GuzzleHttp\ClientInterface $httpClient = null){
+        $this->httpClient = $httpClient ?: new GuzzleHttp\Client();
+    }
+
+    /**
      * @param \AnyOption\Command $command
      * @return bool
+     * @throws \AnyOption\Exception
      */
     public function call(Command $command){
 
@@ -23,11 +31,22 @@ class ApiClient
 
         $uri = $this->baseUrl . $command->getUri();
 
-        $this->httpClient->request('GET', $uri, [json_encode($requestData)]);
+        $serverResponse = $this->httpClient->request('POST', $uri, [json_encode($requestData)]);
 
-        var_dump($requestData);
+        // Read a body contents
+        $contents = $serverResponse->getBody()->getContents();
 
-        return true;
+        // Parse raw body contents into Payload object.
+        $payload = Payload::fromJson($contents);
+
+        // Load data from parsed object into ApiResponse object.
+        $apiResponse = new ApiResponse($payload);
+
+        if (!$apiResponse->isSuccess()){
+            throw new Exception($apiResponse, $apiResponse->getApiCodeDescription());
+        }
+
+        return $apiResponse;
     }
 
 
