@@ -56,9 +56,9 @@ class Payload implements \ArrayAccess, \JsonSerializable
     {
         if (is_null($offset)) {
             $this->data[] = $value;
-        } else {
-            $this->data[$offset] = $value;
+            return;
         }
+        $this->data[$offset] = $value;
     }
 
     /**
