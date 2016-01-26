@@ -13,7 +13,7 @@ class Parameter
     public function __construct($name, $preprocessors, $validators){
         $this->name = $name;
         $this->preprocessors = $preprocessors;
-        $this->validators;
+        $this->validators = $validators;
     }
 
     public function getName(){
