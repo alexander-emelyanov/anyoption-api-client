@@ -14,10 +14,25 @@ class ApiClient
     protected $httpClient;
 
     /**
+     * Array with parameters. These parameter will be used for each request to server.
+     * You can override parameter of ApiClient over Command parameters.
+     * @var array
+     */
+    protected $parameters = [];
+
+    /**
+     * @param array $parameters
      * @param GuzzleHttp\ClientInterface|null $httpClient
      */
-    public function __construct(GuzzleHttp\ClientInterface $httpClient = null){
+    public function __construct($parameters = [], GuzzleHttp\ClientInterface $httpClient = null){
+        $this->configure($parameters);
         $this->httpClient = $httpClient ?: new GuzzleHttp\Client();
+    }
+
+    public function configure($parameters = []){
+        if (is_array($parameters) && !empty($parameters)){
+            $this->parameters = array_replace_recursive($this->parameters, $parameters);
+        }
     }
 
     /**
@@ -29,7 +44,7 @@ class ApiClient
 
         $uri = $this->baseUrl . $command->getUri();
 
-        $requestData = $command->getParameters();
+        $requestData = array_replace_recursive($this->parameters, $command->getParameters());
 
         $serverResponse = $this->httpClient->request('POST', $uri, ['body' => json_encode($requestData)]);
 
