@@ -13,12 +13,11 @@ class Payload implements \ArrayAccess, \JsonSerializable
     protected $data;
 
     /**
-     * Creates a payload object from a JSON message.
-     * @param $json
-     * @return Payload
-     * @throws \UnexpectedValueException
+     * Creates a new payload object from string.
+     *
+     * @param array $json The payload data.
      */
-    public static function fromJson($json)
+    public function __construct($json)
     {
         $data = json_decode((string)$json, true);
 
@@ -26,16 +25,6 @@ class Payload implements \ArrayAccess, \JsonSerializable
             throw new \UnexpectedValueException('Invalid JSON message.');
         }
 
-        return new static($data);
-    }
-
-    /**
-     * Creates a new payload object.
-     *
-     * @param array $data The payload data.
-     */
-    public function __construct($data)
-    {
         $this->data = $data;
     }
 

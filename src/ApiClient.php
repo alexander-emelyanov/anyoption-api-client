@@ -52,7 +52,7 @@ class ApiClient
         $contents = $serverResponse->getBody()->getContents();
 
         // Parse raw body contents into Payload object.
-        $payload = Payload::fromJson($contents);
+        $payload = new Payload($contents);
 
         // Load data from parsed object into Response object.
         $response = $command->getResponse($payload);
