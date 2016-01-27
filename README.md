@@ -25,6 +25,9 @@ $client = new \AnyOption\ApiClient([
         'password' => '<ANYOPTION_PASSWORD>'
     ],
 ]);
+
+/** @var \AnyOption\Responses\InsertUser $response */
+$response = $client->call($command);
 ```
 
 Also your IP address must be added to whitelist of AnyOption platform. Feel free to contact me for more details.
