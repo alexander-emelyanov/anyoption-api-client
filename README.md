@@ -31,6 +31,36 @@ Also your IP address must be added to whitelist of AnyOption platform. Feel free
 
 Assuming your credentials is valid and your IP is whitelisted, you are good to go!
 
+### Insert user command
+
+```php
+$command = new \AnyOption\Commands\InsertUser([
+    'utcOffset' => 0,
+    'locale' => 'en',
+    'register' => [
+        'firstName' => 'John',
+        'lastName' => 'Smith',
+        'email' => 'john.smith@my.com',
+        'mobilePhone' => '493025922774',
+        'password' => 'qwerty',
+        'password2' => 'qwerty',
+        'countryName' => 'DEU',
+        'ip' => '127.0.0.1',
+        'terms' => '',
+    ],
+]);
+```
+
+Note: full list of allowed countries you can get using:
+
+```php
+$countries = \AnyOption\Dictionaries::countries();
+```
+
+
+## Contribution
+You are welcome!
+
 ### Running tests
 
 You can run unit tests via [PHPUnit](http://phpunit.de):
