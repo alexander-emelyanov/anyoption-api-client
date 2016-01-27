@@ -40,6 +40,10 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     {
     }
 
+    protected function getRandomCountryISOAlpha3(){
+        return array_rand(\AnyOption\Dictionaries::countries());
+    }
+
     protected function checkResponse(Response $response){
         if (!$response->isSuccess()){
             $msg = "Bad response. " . $response->getApiCode() . ": " . $response->getApiCodeDescription();

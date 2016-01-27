@@ -18,7 +18,7 @@ class CommandsTest extends TestCase
                 'mobilePhone' => $this->faker->randomNumber(8),
                 'password' => $password,
                 'password2' => $password,
-                'countryName' => $this->faker->countryISOAlpha3,
+                'countryName' => $this->getRandomCountryISOAlpha3(),
                 'ip' => $this->faker->ipv4,
                 'terms' => '',
             ],
