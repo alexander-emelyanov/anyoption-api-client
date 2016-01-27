@@ -11,7 +11,7 @@ AnyOption is the world's first and largest trading platform for binary options, 
 You can run unit tests via [PHPUnit](http://phpunit.de):
 
 ```sh
-$ vendor/bin/phpunit
+$ vendor/bin/phpunit tests
 ```
 
 Note: you should install dev dependencies for this package using 
