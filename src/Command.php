@@ -17,17 +17,17 @@ abstract class Command
         return $this->parameters;
     }
 
-    abstract public static function getUri();
+    abstract public function getUri();
 
     /**
      * Returned array is a tree. The leafs of this tree is a AnyOption\Parameter objects.
      * @return array
      */
-    abstract public static function metadata();
+    abstract public function metadata();
 
     /**
      * @param \AnyOption\Payload $payload
      * @return \AnyOption\Response
      */
-    abstract public static function getResponse(Payload $payload);
+    abstract public function getResponse(Payload $payload);
 }

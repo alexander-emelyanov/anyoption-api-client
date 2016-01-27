@@ -9,11 +9,11 @@ use AnyOption\Payload;
 class GetUserDetails extends Command
 {
 
-    public static function getUri(){
+    public function getUri(){
         return 'getUserDetails';
     }
 
-    public static function metadata(){
+    public function metadata(){
         return [
             'locale' => new Parameter('locale', [], []),
             'userName' => new Parameter('userName', [], []),
@@ -29,7 +29,7 @@ class GetUserDetails extends Command
      * @param Payload $payload
      * @return \AnyOption\Responses\InsertUser
      */
-    public static function getResponse(Payload $payload){
+    public function getResponse(Payload $payload){
         return new \AnyOption\Responses\GetUserDetails($payload);
     }
 }
