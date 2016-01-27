@@ -16,3 +16,6 @@ $ vendor/bin/phpunit
 
 Note: you should install dev dependencies for this package using 
 
+```sh
+$ composer update --dev
+```
