@@ -6,3 +6,6 @@ php:
   - '7.0'
   - hhvm
   - nightly
+
+# omitting "script:" will default to phpunit
+script: phpunit tests
