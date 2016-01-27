@@ -58,7 +58,7 @@ class ApiClient
         $response = $command->getResponse($payload);
 
         if (!$response->isSuccess()){
-            throw new Exception($response, $response->getApiCode() . ": " . $response->getApiCodeDescription());
+            throw new Exception($response, $response->getApiCode() . ": " . $response->getApiCodeDescription() . print_r($response->getUserMessages(), 1));
         }
 
         return $response;

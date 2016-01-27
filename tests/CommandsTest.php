@@ -6,7 +6,7 @@ class CommandsTest extends TestCase
 {
     public function testInsertUser()
     {
-        $password = $this->faker->password();
+        $password = substr(md5(rand()), 0, 8);
 
         $command = new \AnyOption\Commands\InsertUser([
             'utcOffset' => -180,
@@ -15,7 +15,7 @@ class CommandsTest extends TestCase
                 'firstName' => $this->faker->firstName,
                 'lastName' => $this->faker->lastName,
                 'email' => $this->faker->email,
-                'mobilePhone' => $this->faker->phoneNumber,
+                'mobilePhone' => $this->faker->randomNumber(8),
                 'password' => $password,
                 'password2' => $password,
                 'countryName' => $this->faker->countryISOAlpha3,
