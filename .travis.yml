@@ -7,7 +7,7 @@ php:
 - hhvm
 - nightly
 before_script:
-    - composer update --dev
+    - cp phpunit.xml.dist phpunit.xml
 script: vendon/bin/phpunit
 notifications:
   slack:
