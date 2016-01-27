@@ -8,6 +8,8 @@ php:
 - nightly
 before_script:
     - cp phpunit.xml.dist phpunit.xml
+    - flags=""
+    - composer install $flags
 script: vendon/bin/phpunit
 notifications:
   slack:
