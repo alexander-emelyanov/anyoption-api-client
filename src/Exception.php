@@ -19,6 +19,6 @@ class Exception extends \Exception
      * @return \AnyOption\Response
      */
     public function getResponse(){
-       return $this->apiResponse;
+       return $this->response;
     }
 }
