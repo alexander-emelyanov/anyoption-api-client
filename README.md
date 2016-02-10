@@ -24,6 +24,7 @@ $client = new \AnyOption\ApiClient([
         'userName' => '<ANYOPTION_USERNAME>',
         'password' => '<ANYOPTION_PASSWORD>'
     ],
+    'url' => '<ANYOPTION_URL>'
 ]);
 ```
 

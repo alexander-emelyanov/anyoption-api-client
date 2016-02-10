@@ -19,7 +19,7 @@ class CommandsTest extends TestCase
                 'password' => $password,
                 'password2' => $password,
                 'countryName' => $this->getRandomCountryISOAlpha3(),
-                'ip' => $this->faker->ipv4,
+                'ip' => '127.0.0.1',
                 'terms' => '',
             ],
         ]);

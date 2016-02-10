@@ -30,6 +30,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
                 'userName' => getenv('ANYOPTION_USERNAME'),
                 'password' => getenv('ANYOPTION_PASSWORD'),
             ],
+            'url' => getenv('ANYOPTION_URL'),
         ]);
     }
 

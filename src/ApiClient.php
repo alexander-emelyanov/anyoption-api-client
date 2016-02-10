@@ -8,7 +8,7 @@ class ApiClient
 {
 
     /**
-     * @var GuzzleHttp\ClientInterface A Guzzle HTTP client.
+     * @var \GuzzleHttp\ClientInterface A Guzzle HTTP client.
      */
     protected $httpClient;
 
@@ -21,7 +21,7 @@ class ApiClient
 
     /**
      * @param array $parameters
-     * @param GuzzleHttp\ClientInterface|null $httpClient
+     * @param \GuzzleHttp\ClientInterface|null $httpClient
      */
     public function __construct($parameters = [], GuzzleHttp\ClientInterface $httpClient = null){
         $this->configure($parameters);
@@ -37,8 +37,12 @@ class ApiClient
     /**
      * Method returns URL mount point for AnyOption API.
      * @return mixed
+     * @throws \Exception
      */
     public function getUrl(){
+        if(!isset($this->parameters['url'])){
+            throw new \Exception('Configuration is incomplete. Specify AnyOption URL.');
+        }
         return $this->parameters['url'];
     }
 
