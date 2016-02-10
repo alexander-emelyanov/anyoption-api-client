@@ -6,7 +6,6 @@ use GuzzleHttp;
 
 class ApiClient
 {
-    protected $baseUrl = 'http://api.testenv.anyoption.com/api_gateway/services/';
 
     /**
      * @var GuzzleHttp\ClientInterface A Guzzle HTTP client.
@@ -26,7 +25,7 @@ class ApiClient
      */
     public function __construct($parameters = [], GuzzleHttp\ClientInterface $httpClient = null){
         $this->configure($parameters);
-        $this->httpClient = $httpClient ?: new GuzzleHttp\Client();
+        $this->httpClient = $httpClient ? : new GuzzleHttp\Client();
     }
 
     public function configure($parameters = []){
@@ -36,15 +35,33 @@ class ApiClient
     }
 
     /**
+     * Method returns URL mount point for AnyOption API.
+     * @return mixed
+     */
+    public function getUrl(){
+        return $this->parameters['url'];
+    }
+
+    /**
+     * Returns parameters that should be transferred with command's parameters.
+     * @return array
+     */
+    public function getParameters(){
+        $parameters = $this->parameters;
+        unset($parameters['url']);
+        return $parameters;
+    }
+
+    /**
      * @param \AnyOption\Command $command
      * @return \AnyOption\Response
      * @throws \AnyOption\Exception
      */
     public function call(Command $command){
 
-        $uri = $this->baseUrl . $command->getUri();
+        $uri = $this->getUrl() . $command->getUri();
 
-        $requestData = array_replace_recursive($this->parameters, $command->getParameters());
+        $requestData = array_replace_recursive($this->getParameters(), $command->getParameters());
 
         $serverResponse = $this->httpClient->request('POST', $uri, ['body' => json_encode($requestData)]);
 
