@@ -61,6 +61,18 @@ Note: full list of allowed countries you can get using:
 $countries = \AnyOption\Dictionaries::countries();
 ```
 
+### GetFTDUsersByDate
+
+```php
+$command = new \AnyOption\Commands\GetFTDUsersByDate([
+    'locale' => 'en',
+    'dateRequest' => date('Y-m-d'),
+]);
+
+/** @var \AnyOption\Responses\GetFTDUsersByDate $response */
+$response = $client->call($command);
+```
+
 
 ## Contribution
 You are welcome!
