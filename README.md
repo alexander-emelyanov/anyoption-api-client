@@ -1,8 +1,8 @@
 AnyOption API Client
 ====
-[![Build Status](https://travis-ci.org/alexander-emelyanov/anyoption-api-client.svg?branch=master)](https://travis-ci.org/alexander-emelyanov/anyoption-api-client) 
-[![Code Climate](https://codeclimate.com/github/alexander-emelyanov/anyoption-api-client/badges/gpa.svg)](https://codeclimate.com/github/alexander-emelyanov/anyoption-api-client)
+[![Build Status](https://img.shields.io/travis/alexander-emelyanov/anyoption-api-client/master.svg?style=flat-square)](https://travis-ci.org/dingo/api)
 [![StyleCI](https://styleci.io/repos/49424515/shield)](https://styleci.io/repos/49424515)
+[![Code Climate](https://codeclimate.com/github/alexander-emelyanov/anyoption-api-client/badges/gpa.svg)](https://codeclimate.com/github/alexander-emelyanov/anyoption-api-client)
 
 This repository contains PHP Client for AnyOption platform.
 
