@@ -2,13 +2,12 @@
 
 namespace AnyOption\Responses;
 
-use AnyOption\Response;
 use AnyOption\Payload;
+use AnyOption\Response;
 
 class GetUserDetails extends Response
 {
-
-    CONST FIELD_USER = 'user';
+    const FIELD_USER = 'user';
 
     /**
      * @var array
@@ -16,14 +15,16 @@ class GetUserDetails extends Response
     protected $user = [];
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
-    public function __construct(Payload $payload){
+    public function __construct(Payload $payload)
+    {
         parent::__construct($payload);
         $this->user = isset($payload[static::FIELD_USER]) ? $payload[static::FIELD_USER] : [];
     }
 
-    public function getUser(){
+    public function getUser()
+    {
         return $this->user;
     }
 }

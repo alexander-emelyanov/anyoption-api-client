@@ -2,29 +2,31 @@
 
 namespace AnyOption\Responses;
 
-use AnyOption\Response;
 use AnyOption\Payload;
+use AnyOption\Response;
 
 class GetFTDUsersByDate extends Response
 {
-
-    CONST FIELD_FTD_USERS_LIST = 'FTDUsersList';
+    const FIELD_FTD_USERS_LIST = 'FTDUsersList';
 
     protected $ftdUsersList = [];
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
-    public function __construct(Payload $payload){
+    public function __construct(Payload $payload)
+    {
         parent::__construct($payload);
         $this->ftdUsersList = isset($payload[static::FIELD_FTD_USERS_LIST]) ? $payload[static::FIELD_FTD_USERS_LIST] : [];
     }
 
     /**
-     * Returns array of FTD users
+     * Returns array of FTD users.
+     *
      * @return array
      */
-    public function getFTDUsersList(){
+    public function getFTDUsersList()
+    {
         return $this->getFTDUsersList();
     }
 }

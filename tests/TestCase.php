@@ -35,20 +35,22 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Free resources
+     * Free resources.
      */
     public function tearDown()
     {
     }
 
-    protected function getRandomCountryISOAlpha3(){
+    protected function getRandomCountryISOAlpha3()
+    {
         return array_rand(\AnyOption\Dictionaries::countries());
     }
 
-    protected function checkResponse(Response $response){
-        if (!$response->isSuccess()){
-            $msg = "Bad response. " . $response->getApiCode() . ": " . $response->getApiCodeDescription();
-            throw new \Exception($msg . print_r($response->getUserMessages()));
+    protected function checkResponse(Response $response)
+    {
+        if (!$response->isSuccess()) {
+            $msg = 'Bad response. '.$response->getApiCode().': '.$response->getApiCodeDescription();
+            throw new \Exception($msg.print_r($response->getUserMessages()));
         }
     }
 }

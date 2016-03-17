@@ -8,16 +8,17 @@ use AnyOption\Payload;
 
 class InsertUser extends Command
 {
-
-    public function getUri(){
+    public function getUri()
+    {
         return 'insertUser';
     }
 
-    public function metadata(){
+    public function metadata()
+    {
         return [
-            'locale' => new Parameter('locale', [], []),
+            'locale'    => new Parameter('locale', [], []),
             'utcOffset' => new Parameter('utcOffset', [], []),
-            'apiUser' => [
+            'apiUser'   => [
                 new Parameter('userName', [], []),
                 new Parameter('password', [], []),
                 ],
@@ -39,9 +40,11 @@ class InsertUser extends Command
 
     /**
      * @param Payload $payload
+     *
      * @return \AnyOption\Responses\InsertUser
      */
-    public function getResponse(Payload $payload){
+    public function getResponse(Payload $payload)
+    {
         return new \AnyOption\Responses\InsertUser($payload);
     }
 }

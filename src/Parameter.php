@@ -10,21 +10,25 @@ class Parameter
 
     protected $validators = [];
 
-    public function __construct($name, $preprocessors, $validators){
+    public function __construct($name, $preprocessors, $validators)
+    {
         $this->name = $name;
         $this->preprocessors = $preprocessors;
         $this->validators = $validators;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function getPreprocessors(){
+    public function getPreprocessors()
+    {
         return $this->preprocessors;
     }
 
-    public function getValidators(){
+    public function getValidators()
+    {
         return $this->validators;
     }
 }

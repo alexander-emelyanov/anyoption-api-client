@@ -8,17 +8,18 @@ use AnyOption\Payload;
 
 class GetUserDetails extends Command
 {
-
-    public function getUri(){
+    public function getUri()
+    {
         return 'getUserDetails';
     }
 
-    public function metadata(){
+    public function metadata()
+    {
         return [
-            'locale' => new Parameter('locale', [], []),
+            'locale'   => new Parameter('locale', [], []),
             'userName' => new Parameter('userName', [], []),
             'password' => new Parameter('password', [], []),
-            'apiUser' => [
+            'apiUser'  => [
                 new Parameter('userName', [], []),
                 new Parameter('password', [], []),
             ],
@@ -27,9 +28,11 @@ class GetUserDetails extends Command
 
     /**
      * @param Payload $payload
+     *
      * @return \AnyOption\Responses\InsertUser
      */
-    public function getResponse(Payload $payload){
+    public function getResponse(Payload $payload)
+    {
         return new \AnyOption\Responses\GetUserDetails($payload);
     }
 }

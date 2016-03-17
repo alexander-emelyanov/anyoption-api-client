@@ -8,15 +8,17 @@ use AnyOption\Payload;
 
 class GetFTDUsersByDate extends Command
 {
-    public function getUri(){
+    public function getUri()
+    {
         return 'getFTDUsersByDate';
     }
 
-    public function metadata(){
+    public function metadata()
+    {
         return [
-            'locale' => new Parameter('locale', [], []),
+            'locale'      => new Parameter('locale', [], []),
             'dateRequest' => new Parameter('dateRequest', [], []),
-            'apiUser' => [
+            'apiUser'     => [
                 new Parameter('userName', [], []),
                 new Parameter('password', [], []),
             ],
@@ -25,9 +27,11 @@ class GetFTDUsersByDate extends Command
 
     /**
      * @param Payload $payload
+     *
      * @return \AnyOption\Responses\GetFTDUsersByDate
      */
-    public function getResponse(Payload $payload){
+    public function getResponse(Payload $payload)
+    {
         return new \AnyOption\Responses\GetFTDUsersByDate($payload);
     }
 }
