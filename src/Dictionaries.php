@@ -7,7 +7,8 @@ class Dictionaries
     /**
      * Returns array which have 3-letter uppercase countries codes as keys and countries names as values.
      */
-    public static function countries(){
+    public static function countries()
+    {
         return [
             'AFG' => 'AFGHANISTAN',
             'ALB' => 'ALBANIA',
@@ -185,7 +186,7 @@ class Dictionaries
             'TUR' => 'Turkey',
             'UKR' => 'Ukraine',
             'GBR' => 'United Kingdom',
-            ''
+            '',
         ];
     }
 }

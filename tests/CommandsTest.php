@@ -10,26 +10,25 @@ class CommandsTest extends TestCase
 
         $command = new \AnyOption\Commands\InsertUser([
             'utcOffset' => -180,
-            'locale' => 'en',
-            'register' => [
-                'firstName' => $this->faker->firstName,
-                'lastName' => $this->faker->lastName,
-                'email' => $this->faker->email,
+            'locale'    => 'en',
+            'register'  => [
+                'firstName'   => $this->faker->firstName,
+                'lastName'    => $this->faker->lastName,
+                'email'       => $this->faker->email,
                 'mobilePhone' => $this->faker->randomNumber(8),
-                'password' => $password,
-                'password2' => $password,
+                'password'    => $password,
+                'password2'   => $password,
                 'countryName' => $this->getRandomCountryISOAlpha3(),
-                'ip' => '127.0.0.1',
-                'terms' => '',
+                'ip'          => '127.0.0.1',
+                'terms'       => '',
             ],
         ]);
 
-        try{
+        try {
             $response = $this->client->call($command);
             $this->checkResponse($response);
-        } catch (\GuzzleHttp\Exception\ConnectException $e){
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
             // AnyOption is a "very secured" platform. Only white-listed IPs are allowed...
         }
-
     }
 }
