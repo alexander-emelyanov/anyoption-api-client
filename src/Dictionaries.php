@@ -172,6 +172,20 @@ class Dictionaries
             'TGO' => 'TOGO',
             'TKL' => 'TOKELAU',
             'TON' => 'TONGA ISLANDS',
+            'ISL' => 'Iceland',
+            'HUN' => 'Hungary',
+            'IRL' => 'Republic of Ireland',
+            'ITA' => 'Italy',
+            'KAZ' => 'Kazakhstan',
+            'LVA' => 'Latvia',
+            'LIE' => 'Liechtenstein',
+            'LTU' => 'Lithuania',
+            'LUX' => 'Luxembourg',
+            'MKD' => 'Macedonia',
+            'TUR' => 'Turkey',
+            'UKR' => 'Ukraine',
+            'GBR' => 'United Kingdom',
+            ''
         ];
     }
 }

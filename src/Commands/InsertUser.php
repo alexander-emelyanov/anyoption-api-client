@@ -32,6 +32,7 @@ class InsertUser extends Command
                 new Parameter('ip', [], []),
                 new Parameter('terms', [], []),
                 new Parameter('dynamicParam', [], []),
+                new Parameter('httpReferer', [], []),
             ],
         ];
     }
