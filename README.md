@@ -4,8 +4,6 @@ AnyOption API Client
 [![StyleCI](https://styleci.io/repos/49424515/shield?)](https://styleci.io/repos/49424515)
 [![Code Climate](https://img.shields.io/codeclimate/github/alexander-emelyanov/anyoption-api-client.svg?style=flat-square)](https://codeclimate.com/github/alexander-emelyanov/anyoption-api-client)
 
-https://img.shields.io/codeclimate/github/kabisaict/flow.svg
-
 This repository contains PHP Client for AnyOption platform.
 
 AnyOption is the world's first and largest trading platform for binary options, one touch options and dozens of other advanced derivatives.
